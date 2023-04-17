@@ -21,7 +21,7 @@ function Navbar() {
       alignItems="center"
       width="100%"
       height="60px"
-      backgroundColor="rgba(255, 255, 255, 0.95)"
+      backgroundColor="#2D2C2F"
       color="black"
       position="fixed"
       top="0"
@@ -48,10 +48,10 @@ function Navbar() {
           columnGap="20px"
           zIndex="2"
         >
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "#FFC709" }}>
             <SearchOutlined />
           </IconButton>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "#FFC709" }}>
             <PersonOutline />
           </IconButton>
           <Badge
@@ -70,12 +70,12 @@ function Navbar() {
           >
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
+              sx={{ color: "#FFC709" }}
             >
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "#FFC709" }}>
             <MenuOutlined />
           </IconButton>
         </Box>

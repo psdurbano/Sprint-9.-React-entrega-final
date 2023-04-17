@@ -7,16 +7,17 @@ import { shades } from "../theme";
 import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
 
-const Item = (item, width) => {
+const Item = ({ item, width }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  const [isHovered, setIshovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const {
     palette: { neutral },
   } = useTheme();
 
   const { category, price, name, image } = item.attributes;
+  console.log(item);
   const {
     data: {
       attributes: {
@@ -26,23 +27,25 @@ const Item = (item, width) => {
       },
     },
   } = image;
+  console.log(image);
+
   return (
     <Box width={width}>
       <Box
         position="relative"
-        onMouseOver={() => setIshovered(true)}
-        onMouseOut={() => setIshovered(false)}
+        onMouseOver={() => setIsHovered(true)}
+        onMouseOut={() => setIsHovered(false)}
       >
         <img
           alt={item.name}
-          width="300px"
-          height="300px"
+          width="400px"
+          height="400px"
           src={`http://localhost:1337${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />
         <Box
-          display={isHovered ? "blocked" : "none"}
+          display={isHovered ? "block" : "none"}
           position="absolute"
           bottom="10%"
           left="0"
@@ -50,11 +53,10 @@ const Item = (item, width) => {
           padding="0 5%"
         >
           <Box display="flex" justifyContent="space-between">
-            {/* AMOUNT */}
             <Box
               display="flex"
               alignItems="center"
-              backgroundColor={shades.neutral[100]}
+              background={shades.neutral[100]}
               borderRadius="3px"
             >
               <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
@@ -65,13 +67,11 @@ const Item = (item, width) => {
                 <AddIcon />
               </IconButton>
             </Box>
-
-            {/* BUTTON */}
             <Button
               onClick={() => {
                 dispatch(addToCart({ item: { ...item, count } }));
               }}
-              sx={{ background: shades.primary[300], color: "white" }}
+              sx={{ backgroundColor: shades.primary[300], color: "white" }}
             >
               Add to Cart
             </Button>
@@ -82,8 +82,8 @@ const Item = (item, width) => {
       <Box mt="3px">
         <Typography variant="subtitle2" color={neutral.dark}>
           {category
-            .replace(/([A-Z])/g, "$1")
-            .replace(/^./, (str) => str.toUppercase())}
+            .replace(/([A-Z])/g, " $1")
+            .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
         <Typography>{name}</Typography>
         <Typography fontWeight="bold">${price}</Typography>

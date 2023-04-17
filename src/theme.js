@@ -12,7 +12,6 @@ export const shades = {
     800: "#121213",
     900: "#090909",
   },
-
   secondary: {
     100: "#fff4ce",
     200: "#ffe99d",
@@ -24,8 +23,7 @@ export const shades = {
     800: "#665004",
     900: "#332802",
   },
-
-  neautral: {
+  neutral: {
     100: "#fcfbf8",
     200: "#faf6f1",
     300: "#f7f2eb",
@@ -46,28 +44,30 @@ export const theme = createTheme({
     secondary: {
       main: shades.secondary[500],
     },
-    neautral: {
-      dark: shades.neautral[700],
-      main: shades.neautral[500],
-      light: shades.neautral[100],
+    neutral: {
+      dark: shades.neutral[700],
+      main: shades.neutral[500],
+      light: shades.neutral[100],
     },
   },
-  typography: ["Jost", "sans-serif"].join(","),
-  fontSize: 11,
-  h1: {
-    typography: ["Jost", "sans-serif"].join(","),
-    fontSize: 48,
-  },
-  h2: {
-    typography: ["Jost", "sans-serif"].join(","),
-    fontSize: 36,
-  },
-  h3: {
-    typography: ["Jost", "sans-serif"].join(","),
-    fontSize: 20,
-  },
-  h4: {
-    typography: ["Jost", "sans-serif"].join(","),
-    fontSize: 14,
+  typography: {
+    fontFamily: ["Fauna One", "sans-serif"].join(","),
+    fontSize: 11,
+    h1: {
+      fontFamily: ["Cinzel", "sans-serif"].join(","),
+      fontSize: 48,
+    },
+    h2: {
+      fontFamily: ["Cinzel", "sans-serif"].join(","),
+      fontSize: 36,
+    },
+    h3: {
+      fontFamily: ["Cinzel", "sans-serif"].join(","),
+      fontSize: 20,
+    },
+    h4: {
+      fontFamily: ["Cinzel", "sans-serif"].join(","),
+      fontSize: 14,
+    },
   },
 });
