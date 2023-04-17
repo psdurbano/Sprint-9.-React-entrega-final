@@ -25,7 +25,7 @@ function Footer() {
             mb="30px"
             color={shades.secondary[500]}
           >
-            ECOMMER
+            ALLMYRECORDS
           </Typography>
           <div>Historia de AMR</div>
         </Box>
