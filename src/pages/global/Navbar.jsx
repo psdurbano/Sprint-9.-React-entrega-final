@@ -9,6 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
+import logo from "../../assets/logo/logo.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -39,8 +40,14 @@ function Navbar() {
           onClick={() => navigate("/")}
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
+          display="flex"
+          alignItems="center"
         >
-          ALLMYRECORDS
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ marginRight: "8px", height: "35px", width: "auto" }}
+          />{" "}
         </Box>
         <Box
           display="flex"
